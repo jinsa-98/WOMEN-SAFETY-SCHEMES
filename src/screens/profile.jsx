@@ -18,7 +18,7 @@ const ProfileScreen = () => {
         <Text style={styles.profileName}>User</Text>
         <View style={styles.profileImageContainer}>
           {/* <Image
-            source={require("./assets/profile-placeholder.png")} // Change path as needed
+            source={require("./assets/profile-placeholder.png")} 
             style={styles.profileImage}
           /> */}
         </View>
@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
   },
   header: {
     height: 180,
-    backgroundColor: "#7F4AC3", // Use solid color instead of gradient
+    backgroundColor: "#7F4AC3",
     borderBottomLeftRadius: 30,
     borderBottomRightRadius: 30,
     alignItems: "center",

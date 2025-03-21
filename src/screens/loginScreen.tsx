@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Alert, SafeAreaView, StyleSheet, Text, View } from "react-native";
+import { Alert, SafeAreaView, StyleSheet, Text, View , Image} from "react-native";
 import LinearGradient from "react-native-linear-gradient";
 import { useNavigation } from "@react-navigation/native";
 import InputField from "../components/InputField";
@@ -29,6 +29,7 @@ const LoginScreen = () => {
   return (
     <LinearGradient colors={["#FF6F61", "#D742F5"]} style={styles.container}>
       <SafeAreaView style={styles.safeArea}>
+      <Image source={require("../assets/images/WSS.png")} style={styles.logo} />
         {/* Header */}
         <Text style={styles.header}>Women Safety Schemes</Text>
 
@@ -78,6 +79,13 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     marginBottom: 30,
     color: "#fff",
+  },
+  logo: {
+    width: 460,  
+    height: 460, 
+    resizeMode: "contain",
+    marginBottom: -40, 
+    marginTop: -60
   },
   signupText: {
     marginTop: 15,
