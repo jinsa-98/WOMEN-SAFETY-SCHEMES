@@ -5,10 +5,11 @@ import Icon from "react-native-vector-icons/Ionicons";
 
 import MainPage from "../screens/mainPage";
 import profile from "../screens/profile";
+import Searchtab from "../screens/searchtab";
 
 const Tab = createBottomTabNavigator();
 
-const DummyScreen = () => <View style={{ flex: 1, backgroundColor: "#f5f5f5" }} />;
+// const DummyScreen = () => <View style={{ flex: 1, backgroundColor: "#f5f5f5" }} />;
 
 const BottomTabNavigator = () => {
   return (
@@ -39,7 +40,7 @@ const BottomTabNavigator = () => {
       })}
     >
       <Tab.Screen name="Home" component={MainPage} options={{ headerShown: false }} />
-      <Tab.Screen name="Search" component={DummyScreen} options={{ headerShown: false }} />
+      <Tab.Screen name="Search" component={Searchtab} options={{ headerShown: false }} />
       <Tab.Screen name="Profile" component={profile} options={{ headerShown: false }} />
     </Tab.Navigator>
   );
