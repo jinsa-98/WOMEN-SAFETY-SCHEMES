@@ -47,6 +47,13 @@ const Searchtab = () => {
           </TouchableOpacity>
         ))}
       </ScrollView>
+      <Text style={styles.sectionTitle}>Safety Tips</Text>
+    <View style={styles.tipsBox}>
+      <Text style={styles.tip}>• Always share your location when traveling late.</Text>
+      <Text style={styles.tip}>• Use trusted apps with SOS features.</Text>
+      <Text style={styles.tip}>• Memorize emergency helpline numbers (e.g., 112, 181 for women in India).</Text>
+      <Text style={styles.tip}> • Download reliable safety apps like 112 India App.</Text>
+    </View>
     </ScrollView>
   );
 };
@@ -93,6 +100,18 @@ const styles = StyleSheet.create({
   },
   schemeImage: { width: "100%", height: 130, borderRadius: 8, marginBottom: 6 },
   schemeText: { textAlign: "center", fontSize: 14, fontWeight: "500" },
+  tipsBox: {
+    backgroundColor: "#f0f0f0",
+    padding: 10,
+    borderRadius: 10,
+    marginTop: 10,
+  },
+  tip: {
+    fontSize: 13,
+    marginBottom: 5,
+    color: "#333",
+  },
+  
 });
 
 export default Searchtab;
