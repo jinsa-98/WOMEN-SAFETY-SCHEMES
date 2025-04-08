@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { SafeAreaView, StyleSheet, Text, View, TouchableOpacity, Linking, ScrollView,
   Image,} from "react-native";
   import { useNavigation } from "@react-navigation/native"; 
-// import ChatBot from "./chatbot";
+import * as Animatable from "react-native-animatable";
 
 const schemes = [
     { name: "Mission Shakti", color: "#A084E8", url: "https://missionshakti.wcd.gov.in/" },
@@ -44,6 +44,7 @@ const MainPage = () => {
           ))}
         </View>
         </View>
+        <Animatable.View animation="pulse" iterationCount="infinite">
          <TouchableOpacity
         style={styles.chatButton}
         onPress={() => navigation.navigate("ChatBot")} 
@@ -53,6 +54,7 @@ const MainPage = () => {
           style={styles.chatIcon}
         />
       </TouchableOpacity>
+      </Animatable.View>
       </SafeAreaView>
     );
   };
@@ -105,8 +107,8 @@ const styles = StyleSheet.create({
   },
   chatButton: {
     position: "absolute",
-    bottom: 65,
-    right: 20,
+    bottom: -70,
+    right: -160,
     backgroundColor: "#A084E8",
     width: 60,
     height: 60,
@@ -116,9 +118,9 @@ const styles = StyleSheet.create({
     elevation: 5,
   },
   chatIcon: {
-    width: 30,
-    height: 30,
-    tintColor: "#fff",
+    width: 45,
+    height:40,
+    // tintColor: "#fff",
   },
 });
 
