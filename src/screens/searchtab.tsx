@@ -20,7 +20,7 @@ const Searchtab = () => {
 
   return (
     <ScrollView style={styles.container}>
-      {/* <Text style={styles.greeting}>Hello 👋</Text> */}
+      
       <Text style={styles.subHeading}> Women Safety Schemes</Text>
 
       <View style={styles.searchBox}>

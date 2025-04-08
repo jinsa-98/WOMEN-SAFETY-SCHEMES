@@ -1,5 +1,8 @@
 import React, { useState } from "react";
-import { SafeAreaView, StyleSheet, Text, View, TouchableOpacity, Linking} from "react-native";
+import { SafeAreaView, StyleSheet, Text, View, TouchableOpacity, Linking, ScrollView,
+  Image,} from "react-native";
+  import { useNavigation } from "@react-navigation/native"; 
+// import ChatBot from "./chatbot";
 
 const schemes = [
     { name: "Mission Shakti", color: "#A084E8", url: "https://missionshakti.wcd.gov.in/" },
@@ -22,10 +25,12 @@ const openURL = (url: string) => {
 
 const MainPage = () => {
     const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+    const navigation = useNavigation();
 
     return (
       <SafeAreaView style={styles.container}>
         <Text style={styles.header}>Women's Safety Schemes</Text>
+        <View style={styles.backgroundCard}>
         <View style={styles.grid}>
           {schemes.map((scheme, index) => (
             <TouchableOpacity
@@ -38,6 +43,16 @@ const MainPage = () => {
             </TouchableOpacity>
           ))}
         </View>
+        </View>
+         <TouchableOpacity
+        style={styles.chatButton}
+        onPress={() => navigation.navigate("ChatBot")} 
+      >
+        <Image
+          source={require("../assets/images/cartoon.png")} 
+          style={styles.chatIcon}
+        />
+      </TouchableOpacity>
       </SafeAreaView>
     );
   };
@@ -60,6 +75,16 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     gap: 10,
   },
+  backgroundCard: {
+    backgroundColor: "#ffffff",
+    borderRadius: 16,
+    padding: 20,
+    width: "90%",
+    shadowColor: "#000",
+    shadowOpacity: 0.1,
+    shadowRadius: 10,
+    elevation: 6,
+  },
   card: {
     width: 140,
     height: 100,
@@ -77,6 +102,23 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     textAlign: "center",
     paddingHorizontal: 5,
+  },
+  chatButton: {
+    position: "absolute",
+    bottom: 65,
+    right: 20,
+    backgroundColor: "#A084E8",
+    width: 60,
+    height: 60,
+    borderRadius: 30,
+    justifyContent: "center",
+    alignItems: "center",
+    elevation: 5,
+  },
+  chatIcon: {
+    width: 30,
+    height: 30,
+    tintColor: "#fff",
   },
 });
 
